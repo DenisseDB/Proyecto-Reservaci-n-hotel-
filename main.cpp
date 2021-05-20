@@ -13,6 +13,7 @@ Main, corrida de codigo
 #include "Estandar.h"
 //#include "Hotel.h"
 //#include "Reservaciones.h"
+// aun no se crean estas clases, sin embargo, las partes de herencia ya se cuentan en el codigo
 using namespace std;
 
 int main() {
