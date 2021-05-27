@@ -9,3 +9,5 @@ CONSIDERACIONES:
 
 Para el proyecto se hizo uso de clases para tener un mayor orden, organizacion, entrada y salida de datos dependiendo de lo que el usuario desea ejecutar, es importante mencionar que se cuentan con atributos privados para brindar confidencialidad a los datos del husped y para evitar manipulaciones externas.
 Este es un código de c++ por lo tanto es necesario que sea corrido como tal o en sus demás sistemas operativos, de igua mnera se pide que ejecuten las clases en el orden y composicion establecidas para su correcto funcionamiento.
+
+De igual manera, en donde se aplica polimorfismo se determino que el numero maximo de agregar reservaciones y de objetos nuevos es de 6, por lo tanto, si se incluyen mas de 6, el programa no funcionara, puesto que se ha llegado al limite establecido
