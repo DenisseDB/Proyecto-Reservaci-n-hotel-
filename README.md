@@ -1,3 +1,5 @@
+CORRIDA: se sigue trabajando en comipilar el código, pero dejo estas opciones por si son utiles para compilar y correr:  ~/Hotel-Reserva$ ./main, en la entrega de canvas incluyo el link de replit por si les es más fácil visualizar la corrida
+
 README DE PROYECTO Y URL:
 
 Este proyecto tiene como finalidad el realizar y mostrar un programa para reservas del hotel Luxury Beach Resort MIAMI. el administrador/recepcionista podrá ejecutar una reservación, consultar precios y consultar las habitaciones ocupadas. 
