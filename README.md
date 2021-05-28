@@ -1,4 +1,5 @@
-CORRIDA: se sigue trabajando en comipilar el código, pero dejo estas opciones por si son utiles para compilar y correr:  ~/Hotel-Reserva$ ./main, en la entrega de canvas incluyo el link de replit por si les es más fácil visualizar la corrida
+CORRIDA: se sigue trabajando en comipilar el código, pero dejo estas opciones por si son utiles para compilar y correr: C:\Users\Denisse DB\Documents\Proyecto Hotel Reserva\Hotel Reserva\bin\Debug
+, en la entrega de canvas incluyo el link de replit por si les es más fácil visualizar la corrida
 
 README DE PROYECTO Y URL:
 
