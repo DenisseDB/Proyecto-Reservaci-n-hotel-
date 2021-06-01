@@ -52,7 +52,7 @@ int main() {
     cout << "3. Consultar habitaciones Estandar Ocupadas" << endl;
     cout << "4. Consultar habitaciones Suite Ocupadas" << endl;
     cout << "5. Consultar disponibilidad restante de huespedes" << endl;
-    cout << "6. Mostrar Reservas del mes" << endl;
+    cout << "6.  Mostrar Reservas/huspedes futuros a recibir del mes actual" << endl;
     cout << "7. Cerrar Sesion " << endl;
     cout << "8. Cerrar Sistema" << endl;
     cout << "Numero a consultar: ";
