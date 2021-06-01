@@ -24,9 +24,10 @@ class Cuartos{
   Cuartos(string titular, string carac, int capa); // sobrecarga
   Cuartos(string titular, string carac, int capa, int numero); // sobrecarga
   int calcularPrecio(int capa);
-  virtual void imprimeDatos();
-  virtual void imprimirPrecioTarifa(); // sobre escritura - polimorfismo
-  virtual void mostrarDatosHabitaciones();
+  // sobre escritura - polimorfismo - clase abstracta
+  virtual void imprimeDatos() = 0;
+  virtual void imprimirPrecioTarifa() = 0; 
+  virtual void mostrarDatosHabitaciones() = 0;
   string set_caracterisicas(string c);
 };
 
