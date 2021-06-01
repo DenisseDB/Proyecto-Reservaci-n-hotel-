@@ -28,7 +28,7 @@ class Cuartos{
   virtual void imprimeDatos() = 0;
   virtual void imprimirPrecioTarifa() = 0; 
   virtual void mostrarDatosHabitaciones() = 0;
-  string set_caracterisicas(string c);
+  void set_caracterisicas(string c);
 };
 
 // variable para el caluclo estimado por noche
@@ -64,6 +64,7 @@ int Cuartos :: calcularPrecio(int capa){
   int precio = 0;
   precio = precioAproximadoPorNoche * capa;
   cout << "Precio estimado por noche general para " << capa << " huespedes $" << precio << endl;
+  return precio;
 }
 
 // se realiza la impresion del precio esitmado por noche 
@@ -79,7 +80,7 @@ void Cuartos :: mostrarDatosHabitaciones(){
 
 
 // metodo para poder realizar modificaciones a pesar de que sea privado
-string Cuartos :: set_caracterisicas(string c){
+void Cuartos :: set_caracterisicas(string c){
   carcteristicasBasicas = c;
 }
 
