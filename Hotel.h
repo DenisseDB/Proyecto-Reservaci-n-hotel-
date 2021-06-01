@@ -21,7 +21,6 @@ class Hotel{
   string nombreDeHotel;
   string ubicacion;
   string serviciosDisponibles;
-  Cuartos habitaciones;
   int capacidadDeHuespedes[1];
 
   public:
@@ -51,7 +50,6 @@ Hotel :: Hotel(){
   nombreDeHotel = "Luxury Beach Resort MIAMI.";
   ubicacion = "Miami florida downtown #23";
   serviciosDisponibles = "Estilo Boho, 3 albercas generales y 2 albercas gol, Campo de Golf, Parque de toboganes, Todo incluido, SPA, Transporte al aeropuerto, Acceso a la playa";
-  habitaciones = Cuartos();
 }
 
 // capacidad del hotel en ese día, es generado aleatoriamente
@@ -75,8 +73,6 @@ void Hotel :: mostrarCapacidadHotel(){
 // caracteristicas basicas del hotel, se utiliza informcionde la clase Cuartos
 void Hotel :: mostrarServicios(){
   cout << "\nEl " << nombreDeHotel << " ubicado en: " << ubicacion << " le brinda los siguintes servicios para que se sienta como en casa y disfute de unas increibles vacaciones a pie de playa: " << serviciosDisponibles << endl;
-  cout << "\nEn nuestras habitaciones, podra gozar de servicios de primer nivel, como: ";
-  habitaciones.mostrarDatosHabitaciones();
 }
 
 // objetos para polimorimso, son las reservas del mes
