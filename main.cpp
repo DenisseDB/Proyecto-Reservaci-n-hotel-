@@ -3,11 +3,15 @@
 * Denisse Dominguez Bolaños
 * A01702603
 * 27/05/2021
-* version : 2
-Main, corrida de codigo
+* Este proyecto tiene como objetivo el 
+realizar reservaciones de hotel de acuerdo a 
+la habitacion a reservar, consultar los datos
+de las habitaciones actualmente ocupadas y los
+futuros huspedes a recibir
 */
 
 #include <iostream>
+// mandar a llamar los headers que utlizaremos
 #include "Cuartos.h"
 #include "Suite.h"
 #include "Estandar.h"
@@ -15,7 +19,9 @@ Main, corrida de codigo
 #include "Reservaciones.h"
 using namespace std;
 
-//funcion para iniciar sesion de aministradores y recepcionistas de mostrados del hotel, la clave de acceso es una clave ya establecida y es la misma para todos ya que es la clave del acceso al portal de datos por mostrador.
+/*funcion para iniciar sesion de aministradores y recepcionistas de mostrados 
+    del hotel, la clave de acceso es una clave ya establecida y es la misma 
+    para todos ya que es la clave del acceso al portal de datos por mostrador*/
 void recepcionista(){
   string nombre;
   string claveAccesoGeneral = "recepcion"; //clave establecia
@@ -30,7 +36,8 @@ void recepcionista(){
   }
   else{
     cout << "inicando sesion..." << endl;
-    cout << "\nBuen Día " << nombre << " recuerde ser coordial y amable con los huespedes" << endl;
+    cout << "\n Buen Día " << nombre << " recuerde ser coordial y amable con los 
+      huespedes" << endl;
   }
 }
 
@@ -46,6 +53,7 @@ int main() {
   cout << "\nBienvenido a Luxury Beach Resort MIAMI. " << endl;
   cout << "A continuacion se desplegara nuestro menu de acciones" << endl;
   do{
+    // menu de opciones
     cout << "\nMenu" << endl;
     cout << "1. Informacion del hotel" << endl;
     cout << "2. Ejecutar Reservacion para proximos meses" << endl;
@@ -71,18 +79,23 @@ int main() {
         _reservaciones.impresionReserva();
       }
         else{
-          cout << "\nReserva CANCELADA" << endl; //en caso de negar la reserva, esta es cancelada
+          cout << "\nReserva CANCELADA" << endl; //en caso de negar la reserva,
+            //esta es cancelada
         } 
     }
     else if (opcion == 3){
       cout<<"\n"<< endl;
       cout << "Habitaciones Estandar ocupadas" << endl;
       cout << "\n";
-      Estandar ivanna("Ivanna Cruz","WIFI gratuito", 2, 34, "Mar", "Baño sencillo", 3, 1); // creacion de nuevo objeto, clase estandar con sobrecarga
+      // creacion de nuevo objeto, clase estandar con sobrecarga
+      Estandar ivanna("Ivanna Cruz","WIFI gratuito", 2, 34, "Mar", "Baño sencillo",
+                      3, 1); 
       ivanna.imprimeDatos();
       _cuartosE -> imprimirPrecioTarifa();
       cout<<"\n"<< endl;
-      Estandar iker("Iker Ruiz","Mascotas Permitidas", 1, "Jardin", "Baño sencillo", 1, 4); // creacion de nuevo objeto, clase estandar con sobrecarga
+      // creacion de nuevo objeto, clase estandar con sobrecarga
+      Estandar iker("Iker Ruiz","Mascotas Permitidas", 1, "Jardin", "Baño sencillo",
+                    1, 4);
       iker.imprimeDatos();
       _cuartosE -> imprimirPrecioTarifa();
       cout << "\n";
@@ -93,11 +106,15 @@ int main() {
       cout<<"\n"<< endl;
       cout << "Habitaciones Suite ocupadas" << endl;
       cout << "\n";
-      Suite oscar("Oscar Ochoa","Room service", 5, 41,"Jardin", "1-2 camas king size", "Albercas gold", 1, 4);// creacion de nuevo objeto, clase suite con sobrecarga
+      // creacion de nuevo objeto, clase estandar con sobrecarga
+      Suite oscar("Oscar Ochoa","Room service", 5, 41,"Jardin", "1-2 camas king size",
+                  "Albercas gold", 1, 4);
       oscar.imprimeDatos();
       _cuartosS -> imprimirPrecioTarifa();
       cout<<"\n"<< endl; 
-      Suite manolo("Manolo Martinez", "Todo Incluido", 6, "Mar lateral", "Todo incluido Lujoso", "Acceso a campo de golf y toboganes", 8, 4); // creacion de nuevo objeto, clase suite con sobrecarga
+      // creacion de nuevo objeto, clase estandar con sobrecarga
+      Suite manolo("Manolo Martinez", "Todo Incluido", 6, "Mar lateral", 
+                   "Todo incluido Lujoso", "Acceso a campo de golf y toboganes", 8, 4); 
       manolo.imprimeDatos();
       _cuartosS -> imprimirPrecioTarifa();
       cout << "\n";
@@ -108,16 +125,20 @@ int main() {
     }
     else if (opcion == 6){
       _hotel.reservasDelMes();
-      _hotel.agregarReservaEstandar("Andrea Palet", "Mascotas Permitidas", 3, 21, "Jardin", "Acceso a albercas", 1, 1);
-      _hotel.agregarReservaSuite("Kaori Ochoa", "No fumar", 2, 15, "Mar frontal", "Todo incluido lujoso", "Acceso a toboganes", 8 , 4);
+      _hotel.agregarReservaEstandar("Andrea Palet", "Mascotas Permitidas", 3, 21, 
+                                    "Jardin", "Acceso a albercas", 1, 1);
+      _hotel.agregarReservaSuite("Kaori Ochoa", "No fumar", 2, 15, "Mar frontal", 
+                                 "Todo incluido lujoso", "Acceso a toboganes", 8 , 4);
       _hotel.mostrarReservas();
     }
     else if (opcion == 7){
-      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa y disfurtar de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
+      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa y disfurtar
+        de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
       cout << "Nos vemos" << endl;
       cout << "Finalizando sesion..." << endl;
       cout << "sesion finalizada" << endl;
-      main(); //al cerrar sesion se regresa al main para que otro recepcionista pueda ingresar al sistema y realizar sus propios movimientos y ventas
+      main(); //al cerrar sesion se regresa al main para que otro recepcionista pueda 
+      //ingresar al sistema y realizar sus propios movimientos y ventas
     }
     else if(opcion == 8){
       cout << "\nFinalizando sesion..." << endl;
