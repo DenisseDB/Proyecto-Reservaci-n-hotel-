@@ -35,7 +35,7 @@ void recepcionista(){
     recepcionista();
   }
   else{
-    cout << "inicando sesion..." << endl;
+    cout << "inicando sesion..." << endl;      
     cout << "\n Buen Día " << nombre << " recuerde ser coordial y amable con los 
       huespedes" << endl;
   }
@@ -73,7 +73,7 @@ int main() {
       _reservaciones.ejecutarReserva();
       _reservaciones.precioFinal();
       cout <<"\n¿Confirma reserva? ";
-      cin >> confirmacion;
+      cin >> confirmacion; 
       if(confirmacion == "SI" || confirmacion == "si"){
         cout << "\n ☑ Reserva CONFIRMADA, imprimiendo reservacion..." << endl;
         _reservaciones.impresionReserva();
@@ -87,15 +87,15 @@ int main() {
       cout<<"\n"<< endl;
       cout << "Habitaciones Estandar ocupadas" << endl;
       cout << "\n";
-      // creacion de nuevo objeto, clase estandar con sobrecarga
-      Estandar ivanna("Ivanna Cruz","WIFI gratuito", 2, 34, "Mar", "Baño sencillo",
-                      3, 1); 
+      // creacion de nuevo objeto, clase estandar con sobrecarga      
+      Estandar ivanna("Ivanna Cruz","WIFI gratuito", 2, 34, "Mar", 
+                      "Baño sencillo", 3, 1); 
       ivanna.imprimeDatos();
       _cuartosE -> imprimirPrecioTarifa();
       cout<<"\n"<< endl;
-      // creacion de nuevo objeto, clase estandar con sobrecarga
-      Estandar iker("Iker Ruiz","Mascotas Permitidas", 1, "Jardin", "Baño sencillo",
-                    1, 4);
+      // creacion de nuevo objeto, clase estandar con sobrecarga        
+      Estandar iker("Iker Ruiz","Mascotas Permitidas", 1, "Jardin", 
+                    "Baño sencillo", 1, 4);
       iker.imprimeDatos();
       _cuartosE -> imprimirPrecioTarifa();
       cout << "\n";
@@ -106,14 +106,14 @@ int main() {
       cout<<"\n"<< endl;
       cout << "Habitaciones Suite ocupadas" << endl;
       cout << "\n";
-      // creacion de nuevo objeto, clase estandar con sobrecarga
-      Suite oscar("Oscar Ochoa","Room service", 5, 41,"Jardin", "1-2 camas king size",
-                  "Albercas gold", 1, 4);
+      // creacion de nuevo objeto, clase estandar con sobrecarga        
+      Suite oscar("Oscar Ochoa","Room service", 5, 41,"Jardin",
+                  "1-2 camas king size", "Albercas gold", 1, 4);
       oscar.imprimeDatos();
       _cuartosS -> imprimirPrecioTarifa();
       cout<<"\n"<< endl; 
-      // creacion de nuevo objeto, clase estandar con sobrecarga
-      Suite manolo("Manolo Martinez", "Todo Incluido", 6, "Mar lateral", 
+      // creacion de nuevo objeto, clase estandar con sobrecarga         
+      Suite manolo("Manolo Martinez", "Todo Incluido", 6, "Mar lateral",
                    "Todo incluido Lujoso", "Acceso a campo de golf y toboganes", 8, 4); 
       manolo.imprimeDatos();
       _cuartosS -> imprimirPrecioTarifa();
@@ -125,15 +125,16 @@ int main() {
     }
     else if (opcion == 6){
       _hotel.reservasDelMes();
+        
       _hotel.agregarReservaEstandar("Andrea Palet", "Mascotas Permitidas", 3, 21, 
                                     "Jardin", "Acceso a albercas", 1, 1);
       _hotel.agregarReservaSuite("Kaori Ochoa", "No fumar", 2, 15, "Mar frontal", 
                                  "Todo incluido lujoso", "Acceso a toboganes", 8 , 4);
       _hotel.mostrarReservas();
     }
-    else if (opcion == 7){
-      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa y disfurtar
-        de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
+    else if (opcion == 7){       
+      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa y 
+            disfurtar de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
       cout << "Nos vemos" << endl;
       cout << "Finalizando sesion..." << endl;
       cout << "sesion finalizada" << endl;
