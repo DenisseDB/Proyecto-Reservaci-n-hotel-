@@ -61,16 +61,32 @@ class Suite : public Cuartos{
 };
 
 
-// precio por noche en la habitacion
+/*
+precioHabitacionSuite variable para
+guardar el valor numerico del 
+costo por noche en cuarto Suite
+*/
 int precioHabitacionSuite = 4500;
 
-// carcteristcas y derechos con los que la habitacion cuenta
-// se guardan en una cadena de caracteres
+
+/*
+datosHabitacionesS y datosHabitacionesS
+carcteristcas y derechos con los que la
+habitacion cuenta y se guardan en una cadena 
+de caracteres
+@param
+@return
+*/
 char datosHabitacionesS[] = ("Camas: 1-2 camas King Size, Baño completo con tina, 2 labavos y retreste separado del area de regader, Jacuzzi propio");
 
-char derechosHabitacion[] = ("Acceso a albercas con pulsera verde y gold, Todo Incluido Lujoso, Acceso al campo de golf y toboganes");
+char datosHabitacionesS[] = ("Acceso a albercas con pulsera verde y gold, Todo Incluido Lujoso, Acceso al campo de golf y toboganes");
 
-// constructor vacio
+/*
+Suite constructor vacio
+
+@param
+@return
+*/
 Suite :: Suite(){
   vista = "Mar";
   caracteristicasSolicitadasEspecificas = "Jacuzzi propio";
