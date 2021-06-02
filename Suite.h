@@ -70,7 +70,7 @@ int precioHabitacionSuite = 4500;
 
 
 /*
-datosHabitacionesS y datosHabitacionesS
+datosHabitacionesS y derechosHabitacion
 carcteristcas y derechos con los que la
 habitacion cuenta y se guardan en una cadena 
 de caracteres
@@ -79,7 +79,7 @@ de caracteres
 */
 char datosHabitacionesS[] = ("Camas: 1-2 camas King Size, Baño completo con tina, 2 labavos y retreste separado del area de regader, Jacuzzi propio");
 
-char datosHabitacionesS[] = ("Acceso a albercas con pulsera verde y gold, Todo Incluido Lujoso, Acceso al campo de golf y toboganes");
+char derechosHabitacion[] = ("Acceso a albercas con pulsera verde y gold, Todo Incluido Lujoso, Acceso al campo de golf y toboganes");
 
 /*
 Suite constructor vacio
@@ -102,7 +102,6 @@ precio tarfario de esta habitacion or noche
 @param
 @return
 */
-imprimir el precio tarifario por noche de la habitacion
 void Suite::imprimirPrecioTarifa(){
   cout << "Precio por noche en habitacion Suite: $" << precioHabitacionSuite << " mxn" << endl;
 }
