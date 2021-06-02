@@ -4,7 +4,11 @@
 * A01702603
 * 27/05/2021
 * version : 2
-Ejecucion de metodos de la clase Suite, donde aqui se determina e imprime el precio para este tipo de habitación, sus carcateristicas y derechos con los que cuenta.
+Esta clase llamada Suite es una clase hija de la clase padre Cuartos, 
+en esta clase se desarolla la impresion de las caracterisitcias y 
+derechos que estan habitaciones proveen, de igual manera se define 
+el costo por noche. Las funciones de estas clases también serán 
+utilizadas por la clase Reservaciones
 */
 
 #pragma once
@@ -22,15 +26,19 @@ class Suite : public Cuartos{
   // metodos publicos
   public:
   // constructores
-  Suite(); 
-  Suite(string titular,string carac, int capa, string view, string especificas, string derechos, int piso, int edificio):Cuartos(titular,carac,capa){ // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Suite; parametros de sobrecarga
+  Suite();
+  // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
+  // de nuevos atributos de la clase Suite; parametros de sobrecarga
+  Suite(string titular, string carac, int capa, string view, string especificas, string derechos, int piso, int edificio):Cuartos(titular, carac, capa){ 
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
     derechosSolicitadosQueBrinda = derechos;
     numeroDePiso = piso;
     numeroDeEdificio = edificio;
   }
-  Suite(string titular,string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio):Cuartos(titular,carac,capa,numero){// sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Suite; parametros de sobrecarga
+  // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso
+  //de nuevos atributos de la clase Suite; parametros de sobrecarga
+  Suite(string titular, string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio):Cuartos(titular, carac, capa, numero){
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
     derechosSolicitadosQueBrinda = derechos;
@@ -57,6 +65,7 @@ class Suite : public Cuartos{
 int precioHabitacionSuite = 4500;
 
 // carcteristcas y derechos con los que la habitacion cuenta
+// se guardan en una cadena de caracteres
 char datosHabitacionesS[] = ("Camas: 1-2 camas King Size, Baño completo con tina, 2 labavos y retreste separado del area de regader, Jacuzzi propio");
 
 char derechosHabitacion[] = ("Acceso a albercas con pulsera verde y gold, Todo Incluido Lujoso, Acceso al campo de golf y toboganes");
@@ -70,19 +79,41 @@ Suite :: Suite(){
   numeroDeEdificio = 1;
 }
 
-// imprimir el precio tarifario por noche de la habitacion
+/*
+imprimirPrecioTarifa Imprime el 
+precio tarfario de esta habitacion or noche
+
+@param
+@return
+*/
+imprimir el precio tarifario por noche de la habitacion
 void Suite::imprimirPrecioTarifa(){
   cout << "Precio por noche en habitacion Suite: $" << precioHabitacionSuite << " mxn" << endl;
 }
 
-// imprimir las caracteristicas y derechos que provee
+/* 
+mostrarDatosHabitaciones imprime 
+las caracteristicas y derechos que provee
+mandando llamar la cadena de caracteres previamente
+realizada
+
+@param
+@return
+*/
 void Suite::mostrarDatosHabitaciones(){
   cout << "Estas habitaciones cuentan con los siguientes derechos y caracterisitcas: " << endl;
   cout << datosHabitacionesS << endl;
   cout << derechosHabitacion << endl;
 }
 
-// metodos de acceso, set para modificar aributos privados
+/* 
+setCaracteristicas, setVista, setDerechos
+son metodos de acceso
+para modificar aributos privados
+
+@param string c, string v, string d
+@return
+*/
 void Suite :: setCaracteristicas(string c){
   c = caracteristicasSolicitadasEspecificas;
 }
@@ -95,7 +126,14 @@ void Suite :: setDerechos(string d){
   d = derechosSolicitadosQueBrinda;
 }
 
-// sobrescritura con los datos de la clase
+/* 
+ImprimeDatos Imprime todos los datos de
+la habitaciones y el nombre del titular 
+de la habitacion
+
+@param
+@return
+*/
 void Suite::imprimeDatos(){
   cout << "\n";
   cout << "Titular de la habitacion: " << titularHabitacion << endl;
