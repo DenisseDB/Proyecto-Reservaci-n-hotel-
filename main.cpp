@@ -36,8 +36,7 @@ void recepcionista(){
   }
   else{
     cout << "inicando sesion..." << endl;      
-    cout << "\n Buen Día " << nombre << " recuerde ser coordial y amable con los 
-      huespedes" << endl;
+    cout << "\n Buen Día " << nombre << " recuerde ser coordial y amable con los huespedes" << endl;
   }
 }
 
@@ -133,8 +132,8 @@ int main() {
       _hotel.mostrarReservas();
     }
     else if (opcion == 7){       
-      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa y 
-            disfurtar de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
+      cout << "\nGracias hacer a nuestros huespedes hacer sentir como en casa";
+      cout << "y disfurtar de unas increibles vacaciones en Luxury Beach Resort MIAMI" << endl;
       cout << "Nos vemos" << endl;
       cout << "Finalizando sesion..." << endl;
       cout << "sesion finalizada" << endl;
@@ -142,6 +141,7 @@ int main() {
       //ingresar al sistema y realizar sus propios movimientos y ventas
     }
     else if(opcion == 8){
+      // cerrar programa
       cout << "\nFinalizando sesion..." << endl;
       cout << "sesion finalizada" << endl;
       cout << "Cerrando sistema..." << endl;
