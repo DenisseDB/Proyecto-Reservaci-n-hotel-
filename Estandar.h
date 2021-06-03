@@ -4,7 +4,11 @@
 * A01702603
 * 27/05/2021
 * version : 2
-Creacion de la clase Estadar, esta es una clase hija de la clase padre, esta clase es hija puesto que es una clase mas especifica de la clase Cuartos y es el tipo de habitacion mas sencilla que se ofrece. Ejecucion de metodos de la clase Estandar, donde aqui se determina e imprime el precio para este tipo de habitación, sus carcateristicas y derechos con los que cuenta.
+Esta clase llamada Estandar es una clase hija de la clase padre Cuartos, 
+en esta clase se desarolla la impresion de las caracterisitcias y 
+derechos que estan habitaciones proveen, de igual manera se define 
+el costo por noche. Las funciones de esta clases también serán 
+utilizadas por la clase Reservaciones
 */
 
 
@@ -25,12 +29,16 @@ class Estandar : public Cuartos{
   public:
   //constructores
   Estandar();
+  // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
+  // de nuevos atributos de la clase Estandar; parametros de sobrecarga
   Estandar(string titular, string carac, int capa, string view, string especificas, int piso, int edificio):Cuartos(titular,carac,capa){ // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Estandar; parametros de sobrecarga
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
     numeroDePiso = piso;
     numeroDeEdificio = edificio;
   }
+  // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
+  // de nuevos atributos de la clase Estandar; parametros de sobrecarga  
   Estandar(string titular, string carac, int capa, int numero, string view, string especificas, int piso, int edificio):Cuartos(titular,carac,capa,numero){ // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Estandar; parametros de sobrecarga
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
@@ -50,13 +58,27 @@ class Estandar : public Cuartos{
   void setVista(string v);
 };
 
-//precio
+/*
+precioHabitacionEstandar variable para
+guardar el valor numerico del 
+costo por noche en cuarto Suite
+*/
 int precioHabitacionEstandar = 2000;
 
-// caracterisiticas basicas y derechos que provee este tipo de habitacion
+/*
+datosHabitaciones son las 
+carcteristcas y derechos con los que la
+habitacion cuenta y se guardan en una cadena 
+de caracteres
+
+@param
+@return
+*/
 char datosHabitaciones[] = "Camas: 2 camas matrimoniales, Baño sencillo, Acceso a albercas con pulsera verde, Todo Incluido Basico";
 
-// constructor vacio
+/*
+Suite constructor vacio
+*/
 Estandar :: Estandar(){
   vista = "vista";
   caracteristicasSolicitadasEspecificas = "caracterisitcas";
@@ -64,18 +86,37 @@ Estandar :: Estandar(){
   numeroDeEdificio = 1;
 }
 
-// se imprime el precio por noche de acuerdo a la tarifa de esta habitacion y se realiza sobrescritura
+/*
+imprimirPrecioTarifa
+Imprime el precio tarfario de esta habitacion 
+por noche y se realiza sobrescritura
+*/
 void Estandar :: imprimirPrecioTarifa(){
   cout << "Precio por noche en habitacion estandar: $" << precioHabitacionEstandar << " mxn" << endl;
 }
 
-// immprime las caracteristicas de la habitacion 
+/* 
+mostrarDatosHabitaciones imprime 
+las caracteristicas y derechos que provee
+mandando llamar la cadena de caracteres previamente
+realizada
+
+@param
+@return
+*/
 void Estandar:: mostrarDatosHabitaciones(){
   cout << "Estas habitaciones cuentan con los siguientes derechos y caracterisitcas: " << endl;
   cout << datosHabitaciones << endl;
 }
 
-// metodos de acceso, set para realizar modificaciones a atributos privados
+/* 
+setCaracteristicas, setVista
+son metodos de acceso
+para modificar aributos privados
+
+@param string c, string v
+@return
+*/
 void Estandar :: setCaracteristicas(string c){
   c = caracteristicasSolicitadasEspecificas;
 }
@@ -84,7 +125,14 @@ void Estandar :: setVista(string v){
   v = vista;
 }
 
-// imprimir y mostrar datos de habitacion
+/* 
+imprimeDatos Imprime todos los datos escenciales del
+cuarto Estandar, asi como el nombre del titular 
+de la habitacion, es decir, de la reserva
+
+@param
+@return
+*/
 void Estandar::imprimeDatos(){
   cout << "\n";
   cout << "Titular de la habitacion: " << titularHabitacion << endl;
