@@ -118,10 +118,13 @@ void Hotel :: mostrarServicios(){
 }
 
 /*
-reservasDelMes
-crar los objetos pa utilizar para polimorimso, 
-haciendo que estos sean las futuras reservas del mes,
-es decir, los huespedes a recibir proximamente
+reservasDelMes generar objetos en Cuartos[]
+
+crear los objetos a utilizar para polimorfimso, 
+son objetos de tipo Estandar y Suite y estos los
+guarda en _reservas[]
+Estas son las resevas, huespedes futuros
+a recibir
 
 @param 
 @return 
@@ -140,9 +143,11 @@ void Hotel :: reservasDelMes(){
 /*
 mostrarReservas
 imprimir una a una las reservas futuras
-del mes de los objetos creados enteriormente,
+del mes de los objetos en el arreglo 
+_reservas[] de acuerdo a cantidadReservas,
 tambien toma en cuenta las reservas agregadas 
-adicionales
+adicionales, imprimiendolas con el metodo
+imprimeDatos
 
 @param 
 @return 
@@ -155,8 +160,9 @@ void Hotel :: mostrarReservas(){
 
 /*
 agregarReservaEstandar
-agregar reservaciones para habitacion estandar,
-nuevos objetos para polimorfimso, los vemos en el main
+agrega objetos para reservaciones de habitacion estandar,
+guardandolo en el arreglo cuartos, siendo
+nuevos objetos para polimorfimso.
 
 @param 
 @return 
@@ -168,8 +174,9 @@ void Hotel :: agregarReservaEstandar(string titular, string carac, int capa, int
 
 /*
 agregarReservaSuite
-agregar reservaciones para habitacion Suite,
-nuevos objetos para polimorfimso, los vemos en el main
+agrega objetos para reservaciones de habitacion suite,
+guardandolo en el arreglo cuartos, siendo
+nuevos objetos para polimorfimso.
 
 @param 
 @return 
