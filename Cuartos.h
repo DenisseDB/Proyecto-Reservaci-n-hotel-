@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
-* version : 2
+* 3/06/2021
+* version : 3
 Esta es la clase padre, de aqui las clases hijas 
 Suite.h y Estandar.h realizaran la herencia
 */
