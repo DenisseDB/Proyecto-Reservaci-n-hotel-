@@ -19,6 +19,7 @@ using namespace std;
 class Reservaciones{
   // declaro atributos privados
   private:
+  // apuntadores para clase Estandar y Suite
   Estandar * _est;
   Suite * _sui;
   string nombreCompleto;
