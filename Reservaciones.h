@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
-* version : 2
+* 3/06/2021
+* version : 3
 La finalidad de esta clase es registrar de manera directa
 en mostrados las reservaciones proximas de meses, calculando
 el precio de la reserva dependiendo facores como dia de entrada, 
@@ -101,9 +101,9 @@ void Reservaciones :: ejecutarReserva(){
 /*
 precioFinal
 calcular y mostrar el precio de la 
-reserva de acuerdo a los dias de hospedaje 
-y al tipo de cuarto, se hace uso de la clase
-Estandar y Suite
+reserva de acuerdo a los dias de hospedaje,
+al tipo de cuarto y la cantidad de personas,
+se hace uso de la clase Estandar y Suite
 
 @param 
 @return 
@@ -111,14 +111,14 @@ Estandar y Suite
 void Reservaciones :: precioFinal(){
   diasTotales = diaDeSalida - diaDeEntrada;
   if(seleccionarTipoCuarto == 1){
-    costoFinal = diasTotales * precioEstandar;
+    costoFinal = diasTotales * precioEstandar * cantidadPersonasAhospedar;
     cout << "\nEl precio de su reserva es de $" << costoFinal << " mxn" << endl;
     cout << "\nEsta habitacion incluye: ";
     datosEstandar.mostrarDatosHabitaciones();
 
   }
   else if(seleccionarTipoCuarto == 2){
-    costoFinal = diasTotales * precioSuite;
+    costoFinal = diasTotales * precioSuite * cantidadPersonasAhospedar;
     cout << "\nEl precio de su reserva es de $" << costoFinal << " mxn" << endl;
     cout << "\nEsta habitacion incluye: ";
     datosSuite.mostrarDatosHabitaciones();
