@@ -2,7 +2,7 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
+* 3/06/2021
 * version : 3
 En esta parte se muestran las caracteristicas base del hotel 
 y por medio de polimorfismo se obtiene el rencuento de las 
