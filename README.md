@@ -29,4 +29,4 @@ De igual manera, en donde se aplica polimorfismo se determino que el numero maxi
 COMPILAR:
 
 "g++ main.cpp"
-"/a.out"
+"./a.out"
