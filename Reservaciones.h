@@ -4,7 +4,10 @@
 * A01702603
 * 27/05/2021
 * version : 2
-En esta parte se ejecutan las reservaciones para meses proximos, se hace uso de la clase estandar y Suite
+La finalidad de esta clase es registrar de manera directa
+en mostrados las reservaciones proximas de meses, calculando
+el precio de la reserva dependiendo facores como dia de entrada, 
+salida, tipo de cuarto, entre otros
 */
 
 #pragma once
@@ -14,6 +17,7 @@ En esta parte se ejecutan las reservaciones para meses proximos, se hace uso de 
 using namespace std;
 
 class Reservaciones{
+  // declaro atributos privados
   private:
   Estandar * _est;
   Suite * _sui;
@@ -25,19 +29,25 @@ class Reservaciones{
   Estandar datosEstandar;
   Suite datosSuite;
 
+  // declaro metodos publicos
   public:
+  // constructores
   Reservaciones(); // constructor vacio
-  // funciones de la clase publicas
   void ejecutarReserva();
   void precioFinal();
   void impresionReserva();
-  // accesos
+  // metodos de acceso
   string getNombre(){ return nombreCompleto;}
   float getEntrada(){ return diaDeEntrada;}
   float getSalida(){ return diaDeSalida;}
   int getCuarto(){ return seleccionarTipoCuarto;}
 };
 
+/*
+variables que seran necesarias
+para la ejecuccion de ciertas
+funciones
+*/
 string mesEntrada;
 string mesSalida;
 int costoFinal = 0;
@@ -56,7 +66,16 @@ Reservaciones :: Reservaciones(){
   datosSuite = Suite();
 }
 
-// se piden datos base para la ejeccuion de la reserva y se establece un maximo de personas por habitacion
+/*
+ejecutarReserva
+se piden datos base para la ejeccuion de
+la reserva y se establece un maximo de personas 
+por habitacion, si el maximo se excede se 
+pide ingresar una cantidad menor
+
+@param 
+@return 
+*/
 void Reservaciones :: ejecutarReserva(){
   cout << "\nTitular de la reserva: " ;
   cin >> nombreCompleto;
@@ -78,7 +97,17 @@ void Reservaciones :: ejecutarReserva(){
   cin >> seleccionarTipoCuarto;
 }
 
-// calcular y mostrar el precio de la reserva de acuerdo a los dias de hospedaje y al tipo de cuarto, se hace uso de la clase Estandar y Suite
+
+/*
+precioFinal
+calcular y mostrar el precio de la 
+reserva de acuerdo a los dias de hospedaje 
+y al tipo de cuarto, se hace uso de la clase
+Estandar y Suite
+
+@param 
+@return 
+*/
 void Reservaciones :: precioFinal(){
   diasTotales = diaDeSalida - diaDeEntrada;
   if(seleccionarTipoCuarto == 1){
@@ -96,7 +125,14 @@ void Reservaciones :: precioFinal(){
   }
 }
 
-// al confirmar la reserva, se imprimen los datos de la misma
+/*
+impresionReserva
+al confirmar la reserva, 
+se imprimen los datos de la misma
+
+@param 
+@return 
+*/
 void Reservaciones :: impresionReserva(){
   cout << "Reserva finalizada con exito" << endl;
   cout << "Nombre del huesped titular: " << nombreCompleto << endl;
