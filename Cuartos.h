@@ -4,7 +4,8 @@
 * A01702603
 * 27/05/2021
 * version : 2
-Creacion de la clase Cuartos, esta es la clase padre y sus clases hija son Estandar y Suite
+Esta es la clase padre, de aqui las clases hijas 
+Suite.h y Estandar.h realizaran la herencia
 */
 
 #pragma once
@@ -20,9 +21,10 @@ class Cuartos{
   int numeroDeHabitacion;
   //metodos publicos 
   public:
+  // constructores
   Cuartos(); // constructor vacio
-  Cuartos(string titular, string carac, int capa); // sobrecarga
-  Cuartos(string titular, string carac, int capa, int numero); // sobrecarga
+  Cuartos(string titular, string carac, int capa); // constructor sobrecarga
+  Cuartos(string titular, string carac, int capa, int numero); // constructor sobrecarga
   int calcularPrecio(int capa);
   // sobre escritura - polimorfismo - clase abstracta
   virtual void imprimeDatos() = 0;
@@ -58,7 +60,16 @@ Cuartos :: Cuartos(string titular, string carac, int capa, int numero){
   numeroDeHabitacion = numero;
 }
 
-// metodo para calcular la estimacion por noche 
+/*
+calcularPrecio(int capa)
+calcula el precio estimado por noche por persona, 
+con la varibale de precioAproximadoPorNoche la
+multiplica por la cantidad de personas obteniendo
+el precio
+
+@param recibe numero entero de huespedes a recervar
+@return precio estimado
+*/
 int Cuartos :: calcularPrecio(int capa){
   capacidadHuespedes = capa;
   int precio = 0;
@@ -67,23 +78,56 @@ int Cuartos :: calcularPrecio(int capa){
   return precio;
 }
 
-// se realiza la impresion del precio esitmado por noche 
+/*
+imprimirPrecioTarifa
+se imprime el precio por noche tarifa
+en las habitaciones del hotel
+
+@param 
+@return 
+*/
 void Cuartos :: imprimirPrecioTarifa(){
   cout << "Precio estimado por noche general" << precioAproximadoPorNoche << endl;
 }
 
-// imprimir los datos escenciales de las habitaciones
+/*
+mostrarDatosHabitaciones
+imprime los datos escenciales del hotel y de
+los cuartos, mostrando sus caracterisiticas 
+sobresalientes.
+
+@param 
+@return 
+*/
 void Cuartos :: mostrarDatosHabitaciones(){
   cout << "Todas nuestras habitaciones cuentan con los siguientes servicios y caracterisiticas" << endl;
   cout << carcteristicasBasicas << endl;
 }
 
 
-// metodo para poder realizar modificaciones a pesar de que sea privado
+/*
+set_caracterisicas
+metodo de acceso set para poder modificar
+desde fuera los atributos privados de la 
+calse
+
+@param string c
+@return c
+*/
 void Cuartos :: set_caracterisicas(string c){
   carcteristicasBasicas = c;
 }
 
+/*
+imprimeDatos
+se imprime los datos de tras de cada cuarto,
+es decir, a nombre de quien esta el cuarto,
+en numero, capacidad y caracterisiticas
+del cuarto
+
+@param 
+@return 
+*/
 void Cuartos :: imprimeDatos(){
   cout << "Titular de la habotacion: " << titularHabitacion << endl;
   cout << "Numero de habitacion #" << numeroDeHabitacion << endl;
