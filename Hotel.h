@@ -3,8 +3,11 @@
 * Denisse Dominguez Bolaños
 * A01702603
 * 27/05/2021
-* version : 2
-En esta parte se muestran las caracteristicas base del hotel y por medio de polimorfimo se obtiene el rencuento de las reservaciones del mes y en el main se podran agregar reservas.
+* version : 3
+En esta parte se muestran las caracteristicas base del hotel 
+y por medio de polimorfismo se obtiene el rencuento de las 
+reservaciones futuras del mes y agregas 
+para los futuros meses.
 */
 
 
@@ -15,6 +18,7 @@ using namespace std;
 const int MAX = 6; //maxima cantidad de reservas
 
 class Hotel{
+  // declaro atributos privados
   private:
   Cuartos * _reservas[MAX]; // apuntador para aplicar polimorfismo
   int cantidadReservas;
@@ -24,7 +28,7 @@ class Hotel{
   int capacidadDeHuespedes[1];
 
   public:
-  // metodos publicos
+  // declaro metodos publicos
   Hotel();
   void generarCapacidadHuespedes();
   int getCapacidad(int);
@@ -34,13 +38,15 @@ class Hotel{
   string getNombre(){ return nombreDeHotel;}
   string getUbicacion(){ return ubicacion;}
   string getServicios(){ return serviciosDisponibles;}
-  // aplican polimorfimso
+  // aplicadores para polimorfimso
   void reservasDelMes();
   void mostrarReservas();
   void agregarReservaEstandar(string titular, string carac, int capa, int numero, string view, string especificas, int piso, int edificio);
   void agregarReservaSuite(string titular,string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio);
 };
 
+// variables iniciales para el desarollo de 
+// algunas funciones que las necesitaran
 const float N = 1;
 int capacidadAleatoria[1];
 
@@ -52,30 +58,74 @@ Hotel :: Hotel(){
   serviciosDisponibles = "Estilo Boho, 3 albercas generales y 2 albercas gol, Campo de Golf, Parque de toboganes, Todo incluido, SPA, Transporte al aeropuerto, Acceso a la playa";
 }
 
-// capacidad del hotel en ese día, es generado aleatoriamente
+/*
+generarCapacidadHuespedes
+Esta funcion de manera aleatoria genera
+la capacidad en ese momento del hotel, para 
+ver si se pueden aceptra mas reservas o ya no.
+Los numeros aleatorios van de 0 a 80
+
+@param 
+@return 
+*/
 void Hotel :: generarCapacidadHuespedes(){ 
   for(int i=0; i<N; i++){ 
     capacidadAleatoria[i]= 1+rand()%(80+1-1); 
   }
 }
 
+/*
+getCapacidad
+metodo de acceso para obtener la 
+capacidad aleatoria generada en la
+funcion anterior
+
+@param int cp
+@return capacidadAleatoria[cp]
+*/
 int Hotel :: getCapacidad(int cp){
   return capacidadAleatoria[cp];
 }
 
-// imprimir la capacidad 
+/*
+mostrarCapacidadHotel
+imprimir la capacidad aleatoria generada
+en las funciones anterior, imprimiendo
+en pantalla dicha capcidad
+
+@param 
+@return 
+*/
 void Hotel :: mostrarCapacidadHotel(){
   for (int i=0; i<1 ; i++){
     cout << "Al dia de hoy, Luxury Beach Resort MIAMI le queda  disponibilidad de: " << capacidadAleatoria[i] << " huespedes" <<endl;
   } 
 }
 
-// caracteristicas basicas del hotel, se utiliza informcionde la clase Cuartos
+/*
+mostrarServicios
+imprimir la caracteristicas basicas del 
+hotel, ademas de los atributos de esta clase,
+se utiliza informacion de la 
+clase Cuartos, recompilando a infromacion
+basica del hotel
+
+@param 
+@return 
+*/
 void Hotel :: mostrarServicios(){
   cout << "\nEl " << nombreDeHotel << " ubicado en: " << ubicacion << " le brinda los siguintes servicios para que se sienta como en casa y disfute de unas increibles vacaciones a pie de playa: " << serviciosDisponibles << endl;
 }
 
-// objetos para polimorimso, son las reservas del mes
+/*
+reservasDelMes
+crar los objetos pa utilizar para polimorimso, 
+haciendo que estos sean las futuras reservas del mes,
+es decir, los huespedes a recibir proximamente
+
+@param 
+@return 
+*/
 void Hotel :: reservasDelMes(){
   _reservas[cantidadReservas] = new Estandar("Concepcion Rojas","Estilo habitacion Boho", 4, "Laguna", "Todo incluido base", 4, 1);
   cantidadReservas++;
@@ -87,20 +137,43 @@ void Hotel :: reservasDelMes(){
    cantidadReservas++;
 }
 
-// imprimir una a una las reservas del mes de los objetos establecidos como los que se agregaran en el main
+/*
+mostrarReservas
+imprimir una a una las reservas futuras
+del mes de los objetos creados enteriormente,
+tambien toma en cuenta las reservas agregadas 
+adicionales
+
+@param 
+@return 
+*/
 void Hotel :: mostrarReservas(){
   for(int i=0; i<cantidadReservas; i++){
     _reservas[i]->imprimeDatos();
   }
 }
 
-// agregar reservaciones para habitacion estandar, nuevos objetos para polimorfimso, los vemos en el main
+/*
+agregarReservaEstandar
+agregar reservaciones para habitacion estandar,
+nuevos objetos para polimorfimso, los vemos en el main
+
+@param 
+@return 
+*/
 void Hotel :: agregarReservaEstandar(string titular, string carac, int capa, int numero, string view, string especificas, int piso, int edificio){
   _reservas[cantidadReservas] = new Estandar(titular, carac, capa, numero, view, especificas, piso, edificio);
   cantidadReservas++;
 }
 
-// agregar reservaciones para habitacion Suite, nuevos objetos para polimorfimso, los vemos en el main
+/*
+agregarReservaSuite
+agregar reservaciones para habitacion Suite,
+nuevos objetos para polimorfimso, los vemos en el main
+
+@param 
+@return 
+*/
 void Hotel :: agregarReservaSuite(string titular, string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio){
   _reservas[cantidadReservas] = new Suite(titular, carac, capa, numero, view, especificas, derechos, piso, edificio);
   cantidadReservas++;
