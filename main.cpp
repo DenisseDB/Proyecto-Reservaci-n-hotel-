@@ -2,7 +2,7 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
+* 3/06/2021
 * Este proyecto tiene como objetivo el 
 realizar reservaciones de hotel de acuerdo a 
 la habitacion a reservar, consultar los datos
