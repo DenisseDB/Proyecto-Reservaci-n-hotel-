@@ -78,32 +78,6 @@ int Cuartos :: calcularPrecio(int capa){
   return precio;
 }
 
-/*
-imprimirPrecioTarifa
-se imprime el precio por noche tarifa
-en las habitaciones del hotel
-
-@param 
-@return 
-*/
-void Cuartos :: imprimirPrecioTarifa(){
-  cout << "Precio estimado por noche general" << precioAproximadoPorNoche << endl;
-}
-
-/*
-mostrarDatosHabitaciones
-imprime los datos escenciales del hotel y de
-los cuartos, mostrando sus caracterisiticas 
-sobresalientes.
-
-@param 
-@return 
-*/
-void Cuartos :: mostrarDatosHabitaciones(){
-  cout << "Todas nuestras habitaciones cuentan con los siguientes servicios y caracterisiticas" << endl;
-  cout << carcteristicasBasicas << endl;
-}
-
 
 /*
 set_caracterisicas
@@ -117,21 +91,3 @@ calse
 void Cuartos :: set_caracterisicas(string c){
   carcteristicasBasicas = c;
 }
-
-/*
-imprimeDatos
-se imprime los datos de tras de cada cuarto,
-es decir, a nombre de quien esta el cuarto,
-en numero, capacidad y caracterisiticas
-del cuarto
-
-@param 
-@return 
-*/
-void Cuartos :: imprimeDatos(){
-  cout << "Titular de la habotacion: " << titularHabitacion << endl;
-  cout << "Numero de habitacion #" << numeroDeHabitacion << endl;
-  cout << "Habitacion con capacidad de " << capacidadHuespedes << " huespedes" << endl;
-  cout << "Caracterisitcas de habitacion: " << carcteristicasBasicas << endl;
-}
-
