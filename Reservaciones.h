@@ -7,7 +7,8 @@
 La finalidad de esta clase es registrar de manera directa
 en mostrados las reservaciones proximas de meses, calculando
 el precio de la reserva dependiendo facores como dia de entrada, 
-salida, tipo de cuarto, entre otros
+salida, tipo de cuarto, entre otros. La reserva se ejecuta en 
+el main drectamente
 */
 
 #pragma once
