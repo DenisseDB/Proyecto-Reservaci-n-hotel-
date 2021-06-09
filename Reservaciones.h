@@ -80,14 +80,14 @@ se hace uso de la clase Estandar y Suite
 */
 void Reservaciones :: precioFinal(int tipoCuarto,int cantidadPersonasAhospedar, int diaDeEntrada, int diaDeSalida){
   diasTotales = diaDeSalida - diaDeEntrada;
-  if(seleccionarTipoCuarto == 1){
+  if(tipoCuarto == 1){
     costoFinal = diasTotales * precioEstandar * cantidadPersonasAhospedar;
     cout << "\nEl precio de su reserva es de $" << costoFinal << " mxn" << endl;
     cout << "\nEsta habitacion incluye: ";
     datosEstandar.mostrarDatosHabitaciones();
 
   }
-  else if(seleccionarTipoCuarto == 2){
+  else if(tipoCuarto == 2){
     costoFinal = diasTotales * precioSuite * cantidadPersonasAhospedar;
     cout << "\nEl precio de su reserva es de $" << costoFinal << " mxn" << endl;
     cout << "\nEsta habitacion incluye: ";
