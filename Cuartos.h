@@ -25,7 +25,7 @@ class Cuartos{
   Cuartos(); // constructor vacio
   Cuartos(string titular, int capa); // constructor sobrecarga
   Cuartos(string titular, string carac, int capa, int numero); // constructor sobrecarga
-  int calcularPrecioEstimado(int capa);
+  int calcularPrecio(int capa);
   // sobre escritura - polimorfismo - clase abstracta
   virtual void imprimeDatos() = 0;
   virtual void imprimirPrecioTarifa() = 0; 
@@ -61,7 +61,7 @@ Cuartos :: Cuartos(string titular, string carac, int capa, int numero){
 }
 
 /*
-calcularPrecioEstimado(int capa)
+calcularPrecio(int capa)
 calcula el precio estimado por noche por persona, 
 con la varibale de precioAproximadoPorNoche la
 multiplica por la cantidad de personas obteniendo
@@ -70,7 +70,7 @@ el precio
 @param recibe numero entero de huespedes a recervar
 @return precio estimado
 */
-int Cuartos :: calcularPrecioEstimado(int capa){
+int Cuartos :: calcularPrecio(int capa){
   capacidadHuespedes = capa;
   int precio = 0;
   precio = precioAproximadoPorNoche * capa;
