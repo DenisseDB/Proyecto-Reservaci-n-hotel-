@@ -41,8 +41,7 @@ void recepcionista(){
 }
 
 int main() {
-  Cuartos * _cuartosE =  new Estandar; //apuntadores para polimorfismo
-  Cuartos * _cuartosS = new Suite; // apuntadores para polimorfismo
+  Suite _suite;
   Reservaciones _reservaciones;
   Hotel _hotel;
   _hotel.generarCapacidadHuespedes();
@@ -68,20 +67,68 @@ int main() {
       _hotel.mostrarServicios();
     }
     else if(opcion == 2){
+      string nombre;
+      int diaDeEntrada;
+      int diaDeSalida;
+      int cantidadPersonas;
+      int tipoCuarto;
+      string vista;
+      string especificas;
+      string derechos;
       string confirmacion;
-      _reservaciones.ejecutarReserva();
-      _reservaciones.precioFinal();
+
+      cout << "\nTitular de la reserva: " ;
+      cin >> nombre;
+      cout << "\n Fecha de entrada: ";
+      cin >> diaDeEntrada;
+      cout << "mes: ";
+      cin >> mesEntrada;
+      cout << "\n Fecha de salida: ";
+      cin >> diaDeSalida;
+      cout << "mes: ";
+      cin >> mesSalida;
+      cout << "\n Cantidad de huespedes: ";
+      cin >> cantidadPersonas;
+      cout << "\nVista: ";
+      // si se excede el maximo de personas por habitacion no
+      // se permitira realizar la reserva
+      if(cantidadPersonas > 4){
+        cout << "Lo sentimos, exede el limite de huespedes por habitacion, favor de realizar reserva con maximo 4 huespedes por habitacion" << endl;
+        return main();
+      }
+      // continua la reservacion
+      cin >> vista;
+      cout << "\n¿En que desea que pongamos mayor atencion durante su estadia? ";
+      cin >> especificas;
+      cout << "\nSelecciona el tipo de cuarto a reservar: (1 Estandar 2 Suite)";
+      cin >> tipoCuarto;
+      _reservaciones.precioFinal(tipoCuarto, cantidadPersonas, diaDeEntrada, diaDeSalida);
       cout <<"\n¿Confirma reserva? ";
-      cin >> confirmacion; 
+      cin >> confirmacion;
+      // en caso de confirmar la reserva, esta se agrega a las reservas
+      // futuras y se imprimen en la opcion 6 de menu, en caso de 
+      //negar la reserva, se cancela la misma
       if(confirmacion == "SI" || confirmacion == "si"){
         cout << "\n ☑ Reserva CONFIRMADA, imprimiendo reservacion..." << endl;
-        _reservaciones.impresionReserva();
-      }
-        else{
-          cout << "\nReserva CANCELADA" << endl; //en caso de negar la reserva,
-            //esta es cancelada
+        _reservaciones.impresionReserva(nombre, diaDeEntrada, mesEntrada, diaDeSalida, mesSalida, tipoCuarto);
+        // si el tipo es 1, se agrega a las estandar
+        if(tipoCuarto == 1){
+          _hotel.agregarReservaEstandar(nombre, cantidadPersonas, vista, especificas);
+        }
+        // si el tipo es 1, se agrega a las Suite y se solicita un ultimo dato
+        else if(tipoCuarto == 2){
+          cout << "\n La habitacion suite le brinda los siguintes derechos: "<< endl;
+          _suite.mostrarDatosHabitaciones();
+          cout << "\n ¿A que número le gustaria que se le presete mayor atencion durante su estadia:";
+          cin >> derechos;
+        _hotel.agregarReservaSuite(nombre, cantidadPersonas, vista, especificas, derechos);
         } 
-    }
+        cout << "\n Gracias " << nombre << " por reservar con nosotros, el día de tu entrada " << diaDeEntrada << " del mes " << mesEntrada << " se definira tu numero de habitacion, piso y edificio. ¡Te esperamos muy pronto!" << endl; 
+      }
+      else{
+        cout << "\nReserva CANCELADA" << endl; //en caso de negar la reserva, esta es cancelada
+      }  
+    } 
     else if (opcion == 3){
       cout<<"\n"<< endl;
       cout << "Habitaciones Estandar ocupadas" << endl;
@@ -90,16 +137,6 @@ int main() {
       Estandar ivanna("Ivanna Cruz","WIFI gratuito", 2, 34, "Mar", 
                       "Baño sencillo", 3, 1); 
       ivanna.imprimeDatos();
-      _cuartosE -> imprimirPrecioTarifa();
-      cout<<"\n"<< endl;
-      // creacion de nuevo objeto, clase estandar con sobrecarga        
-      Estandar iker("Iker Ruiz","Mascotas Permitidas", 1, "Jardin", 
-                    "Baño sencillo", 1, 4);
-      iker.imprimeDatos();
-      _cuartosE -> imprimirPrecioTarifa();
-      cout << "\n";
-      _cuartosE -> mostrarDatosHabitaciones();
-
     }
     else if (opcion == 4){
       cout<<"\n"<< endl;
@@ -109,26 +146,12 @@ int main() {
       Suite oscar("Oscar Ochoa","Room service", 5, 41,"Jardin",
                   "1-2 camas king size", "Albercas gold", 1, 4);
       oscar.imprimeDatos();
-      _cuartosS -> imprimirPrecioTarifa();
-      cout<<"\n"<< endl; 
-      // creacion de nuevo objeto, clase estandar con sobrecarga         
-      Suite manolo("Manolo Martinez", "Todo Incluido", 6, "Mar lateral",
-                   "Todo incluido Lujoso", "Acceso a campo de golf y toboganes", 8, 4); 
-      manolo.imprimeDatos();
-      _cuartosS -> imprimirPrecioTarifa();
-      cout << "\n";
-      _cuartosS -> mostrarDatosHabitaciones();
     }
     else if (opcion == 5){
       _hotel.mostrarCapacidadHotel();
     }
     else if (opcion == 6){
       _hotel.reservasDelMes();
-        
-      _hotel.agregarReservaEstandar("Andrea Palet", "Mascotas Permitidas", 3, 21, 
-                                    "Jardin", "Acceso a albercas", 1, 1);
-      _hotel.agregarReservaSuite("Kaori Ochoa", "No fumar", 2, 15, "Mar frontal", 
-                                 "Todo incluido lujoso", "Acceso a toboganes", 8 , 4);
       _hotel.mostrarReservas();
     }
     else if (opcion == 7){       
