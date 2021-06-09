@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
-* version : 2
+* 8/05/2021
+* version : 3
 Esta clase llamada Estandar es una clase hija de la clase padre Cuartos, 
 en esta clase se desarolla la impresion de las caracterisitcias y 
 derechos que estan habitaciones proveen, de igual manera se define 
@@ -31,11 +31,9 @@ class Estandar : public Cuartos{
   Estandar();
   // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
   // de nuevos atributos de la clase Estandar; parametros de sobrecarga
-  Estandar(string titular, string carac, int capa, string view, string especificas, int piso, int edificio):Cuartos(titular,carac,capa){ // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Estandar; parametros de sobrecarga
+  Estandar(string titular, int capa, string view, string especificas):Cuartos(titular, capa){ // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso de nuevos atributos de la clase Estandar; parametros de sobrecarga
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
-    numeroDePiso = piso;
-    numeroDeEdificio = edificio;
   }
   // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
   // de nuevos atributos de la clase Estandar; parametros de sobrecarga  
