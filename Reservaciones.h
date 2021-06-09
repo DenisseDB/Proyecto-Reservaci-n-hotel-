@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 3/06/2021
-* version : 3
+* 8/06/2021
+* version : 4
 La finalidad de esta clase es registrar de manera directa
 en mostrados las reservaciones proximas de meses, calculando
 el precio de la reserva dependiendo facores como dia de entrada, 
@@ -35,8 +35,8 @@ class Reservaciones{
   // constructores
   Reservaciones(); // constructor vacio
   void ejecutarReserva();
-  void precioFinal();
-  void impresionReserva();
+  void precioFinal(int tipoCuarto,int cantidadPersonasAhospedar, int diaDeEntrada, int diaDeSalida);
+  void impresionReserva(string nombreCompleto, int diaDeEntrada, string mesEntrada, int diaDeSalida, string mesSalida, int seleccionarTipoCuarto);
   // metodos de acceso
   string getNombre(){ return nombreCompleto;}
   float getEntrada(){ return diaDeEntrada;}
@@ -68,38 +68,6 @@ Reservaciones :: Reservaciones(){
 }
 
 /*
-ejecutarReserva
-se piden datos base para la ejeccuion de
-la reserva y se establece un maximo de personas 
-por habitacion, si el maximo se excede se 
-pide ingresar una cantidad menor
-
-@param 
-@return 
-*/
-void Reservaciones :: ejecutarReserva(){
-  cout << "\nTitular de la reserva: " ;
-  cin >> nombreCompleto;
-  cout << "\n Fecha de entrada: ";
-  cin >> diaDeEntrada;
-  cout << "mes: ";
-  cin >> mesEntrada;
-  cout << "\n Fecha de salida: ";
-  cin >> diaDeSalida;
-  cout << "mes: ";
-  cin >> mesSalida;
-  cout << "\n Cantidad de huespedes: ";
-  cin >> cantidadPersonasAhospedar;
-  if(cantidadPersonasAhospedar > 4){
-    cout << "Lo sentimos, exede el limite de huespedes por habitacion, favor de realizar reserva con maximo 4 huespedes por habitacion" << endl;
-    return ejecutarReserva();
-  }
-  cout << "\nSelecciona el tipo de cuarto a reservar: (1 Estandar 2 Suite)";
-  cin >> seleccionarTipoCuarto;
-}
-
-
-/*
 precioFinal
 calcular y mostrar el precio de la 
 reserva de acuerdo a los dias de hospedaje,
@@ -109,7 +77,7 @@ se hace uso de la clase Estandar y Suite
 @param 
 @return 
 */
-void Reservaciones :: precioFinal(){
+void Reservaciones :: precioFinal(int tipoCuarto,int cantidadPersonasAhospedar, int diaDeEntrada, int diaDeSalida){
   diasTotales = diaDeSalida - diaDeEntrada;
   if(seleccionarTipoCuarto == 1){
     costoFinal = diasTotales * precioEstandar * cantidadPersonasAhospedar;
@@ -134,7 +102,7 @@ se imprimen los datos de la misma
 @param 
 @return 
 */
-void Reservaciones :: impresionReserva(){
+void Reservaciones :: impresionReserva(string nombreCompleto, int diaDeEntrada, string mesEntrada, int diaDeSalida, string mesSalida, int seleccionarTipoCuarto){
   cout << "Reserva finalizada con exito" << endl;
   cout << "Nombre del huesped titular: " << nombreCompleto << endl;
   cout << "Check in: " << diaDeEntrada <<  " " << mesEntrada << endl;
