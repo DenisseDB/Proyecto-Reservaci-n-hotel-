@@ -75,9 +75,9 @@ de caracteres
 @param
 @return
 */
-char datosHabitacionesS[] = ("Camas: 1-2 camas King Size, Baño completo con tina, 2 labavos y retreste separado del area de regader, Jacuzzi propio");
+char datosHabitacionesS[] = ("1 Camas: 1-2 camas King Size, 2 Baño completo con tina, 3 2 labavos y retreste separado del area de regader, 4 Jacuzzi propio");
 
-char derechosHabitacion[] = ("1 Acceso a albercas con pulsera verde y gold, 2 Todo Incluido Lujoso, 3 Acceso al campo de golf y toboganes");
+char derechosHabitacion[] = ("5 Acceso a albercas con pulsera verde y gold, 6 Todo Incluido Lujoso, 7 Acceso al campo de golf y toboganes");
 
 /*
 Suite constructor vacio
