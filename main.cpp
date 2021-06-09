@@ -74,7 +74,7 @@ int main() {
       int tipoCuarto;
       string vista;
       string especificas;
-      int derechos;
+      string derechos;
       string confirmacion;
 
       cout << "\nTitular de la reserva: " ;
