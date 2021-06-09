@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 27/05/2021
-* version : 2
+* 8/06/2021
+* version : 3
 Esta clase llamada Suite es una clase hija de la clase padre Cuartos, 
 en esta clase se desarolla la impresion de las caracterisitcias y 
 derechos que estan habitaciones proveen, de igual manera se define 
@@ -29,12 +29,10 @@ class Suite : public Cuartos{
   Suite();
   // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso 
   // de nuevos atributos de la clase Suite; parametros de sobrecarga
-  Suite(string titular, string carac, int capa, string view, string especificas, string derechos, int piso, int edificio):Cuartos(titular, carac, capa){ 
+  Suite(string titular, int capa, string view, string especificas, string derechos):Cuartos(titular, capa){ 
     vista = view;
     caracteristicasSolicitadasEspecificas = especificas;
     derechosSolicitadosQueBrinda = derechos;
-    numeroDePiso = piso;
-    numeroDeEdificio = edificio;
   }
   // sobrecarga, se obtiene la herencia de la clase Cuarto y se hace uso
   //de nuevos atributos de la clase Suite; parametros de sobrecarga
