@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 3/06/2021
-* version : 3
+* 8/06/2021
+* version : 4
 En esta parte se muestran las caracteristicas base del hotel 
 y por medio de polimorfismo se obtiene el rencuento de las 
 reservaciones futuras del mes y agregas 
@@ -41,8 +41,8 @@ class Hotel{
   // aplicadores para polimorfimso
   void reservasDelMes();
   void mostrarReservas();
-  void agregarReservaEstandar(string titular, string carac, int capa, int numero, string view, string especificas, int piso, int edificio);
-  void agregarReservaSuite(string titular,string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio);
+  void agregarReservaEstandar(string titular, int capa, string view, string especificas);
+  void agregarReservaSuite(string titular, int capa, string view, string especificas, string derechoso);
 };
 
 // variables iniciales para el desarollo de 
@@ -130,11 +130,7 @@ a recibir
 @return 
 */
 void Hotel :: reservasDelMes(){
-  _reservas[cantidadReservas] = new Estandar("Concepcion Rojas","Estilo habitacion Boho", 4, "Laguna", "Todo incluido base", 4, 1);
-  cantidadReservas++;
   _reservas[cantidadReservas] = new Estandar("Maria de la Cuadra","Espacio no apto para fumar", 4, 67, "Area de albercas", "2 camas matrimoniales", 2, 3);
-   cantidadReservas++;
-  _reservas[cantidadReservas] = new Suite("Nicole Willy", "Puertas Electricas", 2, "Panoramica", "Jacuzzi propio", "Aceso albercas gold",5,3);
    cantidadReservas++;
   _reservas[cantidadReservas] = new Suite("Jason Miranda","Mascotas permitidas", 1, 14, "Mar frontal", "Baño con tina", "Aceso albercas gold",3,3);
    cantidadReservas++;
@@ -167,8 +163,8 @@ nuevos objetos para polimorfimso.
 @param 
 @return 
 */
-void Hotel :: agregarReservaEstandar(string titular, string carac, int capa, int numero, string view, string especificas, int piso, int edificio){
-  _reservas[cantidadReservas] = new Estandar(titular, carac, capa, numero, view, especificas, piso, edificio);
+void Hotel :: agregarReservaEstandar(string titular, int capa, string view, string especificas){
+  _reservas[cantidadReservas] = new Estandar(titular, capa, view, especificas);
   cantidadReservas++;
 }
 
@@ -181,7 +177,7 @@ nuevos objetos para polimorfimso.
 @param 
 @return 
 */
-void Hotel :: agregarReservaSuite(string titular, string carac, int capa, int numero, string view, string especificas, string derechos, int piso, int edificio){
-  _reservas[cantidadReservas] = new Suite(titular, carac, capa, numero, view, especificas, derechos, piso, edificio);
+void Hotel :: agregarReservaSuite(string titular, int capa, string view, string especificas, string derechos){
+  _reservas[cantidadReservas] = new Suite(titular,capa, view, especificas, derechos);
   cantidadReservas++;
 }
