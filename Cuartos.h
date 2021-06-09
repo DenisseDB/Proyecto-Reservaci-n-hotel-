@@ -2,8 +2,8 @@
 * Proyecto Reservaciones Hotel
 * Denisse Dominguez Bolaños
 * A01702603
-* 3/06/2021
-* version : 3
+* 8/06/2021
+* version : 4
 Esta es la clase padre, de aqui las clases hijas 
 Suite.h y Estandar.h realizaran la herencia
 */
@@ -23,9 +23,9 @@ class Cuartos{
   public:
   // constructores
   Cuartos(); // constructor vacio
-  Cuartos(string titular, string carac, int capa); // constructor sobrecarga
+  Cuartos(string titular, int capa); // constructor sobrecarga
   Cuartos(string titular, string carac, int capa, int numero); // constructor sobrecarga
-  int calcularPrecio(int capa);
+  int calcularPrecioEstimado(int capa);
   // sobre escritura - polimorfismo - clase abstracta
   virtual void imprimeDatos() = 0;
   virtual void imprimirPrecioTarifa() = 0; 
@@ -45,9 +45,9 @@ Cuartos :: Cuartos(){
 
 
 // constructos con 2 parametro de sobrecarga
-Cuartos :: Cuartos(string titular, string carac, int capa){
+Cuartos :: Cuartos(string titular, int capa){
   titularHabitacion = titular;
-  carcteristicasBasicas = carac;
+  carcteristicasBasicas = " ";
   capacidadHuespedes = capa;
   numeroDeHabitacion = 1;
 }
@@ -61,7 +61,7 @@ Cuartos :: Cuartos(string titular, string carac, int capa, int numero){
 }
 
 /*
-calcularPrecio(int capa)
+calcularPrecioEstimado(int capa)
 calcula el precio estimado por noche por persona, 
 con la varibale de precioAproximadoPorNoche la
 multiplica por la cantidad de personas obteniendo
@@ -70,7 +70,7 @@ el precio
 @param recibe numero entero de huespedes a recervar
 @return precio estimado
 */
-int Cuartos :: calcularPrecio(int capa){
+int Cuartos :: calcularPrecioEstimado(int capa){
   capacidadHuespedes = capa;
   int precio = 0;
   precio = precioAproximadoPorNoche * capa;
