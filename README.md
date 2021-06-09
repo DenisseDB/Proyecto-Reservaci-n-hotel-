@@ -30,3 +30,13 @@ COMPILAR:
 
 "g++ main.cpp"
 "./a.out"
+
+CAMBIOS:
+
+Los principales cambios que tuvo el proyecto de acuerdo a los comentarios de mejora fueron:
+  1.- Se modifico todo el UML inicial, haciendo que el actual sea mas claro, mas destacado y con mas sentido 
+  2.- En el UML se agrego los get y set que se estan utilizando
+  3.- Se unieron los .cpp y .h de las clases, es decir, se junto en un .h la declaración de la clase y el desarollo de sus funciones
+  4.- En el main se adjunto la parte de crear la reserva ahi mismo para que despues con polimorfismo agregar esas nuevas reservas
+      en la impresion de las reservas futuras a recibir, esto se hizo solicitando los datos al usuario en el main para despues utilizar
+      las funciones de agrega quienes cuentan con polimorfismo para despues imprimir estas nuevas reservas en la funcion de mostrar reservas
